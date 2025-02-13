@@ -1,0 +1,266 @@
+@font-face {
+  font-family: Rubik;
+  src: url(font/rubik/Rubik-Regular.ttf) format(truetype);
+}
+
+body {
+  /* height: 650px; */
+  background: linear-gradient(darkcyan 40%, darkblue 70%);
+  background-repeat: no-repeat;
+  font: 16px/28px Rubik;
+  letter-spacing: 0.4px;
+}
+
+.container {
+  width: 64em;
+  background-color: gainsboro;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 8px;
+}
+
+.header h1 {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 1em;
+}
+
+.navigasi {
+  margin-left: 3.1em;
+  float: right;
+  position: absolute;
+  top: 1.7em;
+  right: 2em;
+  background-color: darkcyan;
+  width: 30em;
+  padding: 0.2em;
+  margin-top: 2px;
+  border-radius: 20px;
+}
+
+.navigasi li {
+  display: inline-block;
+  margin-left: 4.9em;
+}
+
+.navigasi li a {
+  text-decoration: none;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: black;
+  padding: 0.4em;
+}
+
+.navigasi li a:hover {
+  background-color: black;
+  color: white;
+  border-radius: 7px;
+}
+
+/* main content */
+.content {
+  padding: 2em;
+}
+
+.main {
+  width: 43em;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.main li {
+  width: 120px;
+  height: 140px;
+  border-radius: 20px;
+  border: 5px solid black;
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.main li a img {
+  width: 120px;
+  height: 140px;
+  border-radius: 15px;
+}
+
+.main li span {
+  display: block;
+  width: 120px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 13px;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  line-height: 130px;
+  color: whitesmoke;
+  font-size: 0.9em;
+  font-weight: bold;
+  filter: opacity(0) blur(20px);
+  transition: 0.3s;
+}
+
+.main li a span:hover {
+  filter: opacity(1) blur(0);
+}
+
+/* overlay */
+.overlay {
+  width: 0;
+  height: 0;
+  filter: opacity(0);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  text-align: center;
+  padding: 5em;
+  transition: 0.3s ease-out;
+}
+
+.overlay:target {
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: opacity(1);
+  width: auto;
+  height: auto;
+}
+
+.overlay:not(:target) {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.overlay img {
+  max-height: 100%;
+}
+
+.overlay:target img {
+  animation: gambar 0.5s;
+}
+
+/* close overlay */
+.overlay .close {
+  position: absolute;
+  top: 2em;
+  right: 48%;
+  color: whitesmoke;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 1em;
+  padding: 0.3em;
+  border: 2px solid rgb(255, 255, 255);
+  box-sizing: border-box;
+  filter: opacity(0);
+}
+
+.overlay:target .close {
+  animation: close 0.4s 0.3s forwards;
+}
+
+.next,
+.prev {
+  width: 4em;
+  height: 4.5em;
+  background-image: url(navigasi/next_s.png);
+  position: absolute;
+  top: 43%;
+  right: 28%;
+  filter: opacity(0);
+}
+
+.prev {
+  background-image: url(navigasi/prev_s.png);
+  width: 3.6em;
+  height: 5.6em;
+  left: 28%;
+}
+
+.overlay:target .next {
+  animation: next 0.4s 0.3s forwards;
+}
+
+.overlay:target .prev {
+  animation: prev 0.4s 0.3s forwards;
+}
+
+/* untuk sidebar penulis */
+.sidebar {
+  width: 16.6em;
+  float: right;
+  margin-top: -10px;
+}
+
+.sidebar h2 {
+  font-weight: bold;
+}
+
+.sidebar img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  padding: 7px;
+}
+
+.sidebar p {
+  font-size: 0.8em;
+}
+
+/* footer */
+.footer {
+  height: 2.5em;
+  background-color: rgb(72, 113, 2);
+  text-align: center;
+  line-height: 2.5em;
+  border-radius: 8px;
+}
+
+.footer span {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* animasi */
+@keyframes gambar {
+  0% {
+    filter: opacity(0) blur(50px);
+  }
+  100% {
+    filter: opacity(1) blur(0);
+  }
+}
+
+@keyframes close {
+  0% {
+    filter: opacity(0) blur(30px);
+  }
+  100% {
+    filter: opacity(1) blur(0);
+  }
+}
+
+@keyframes next {
+  0% {
+    transform: translate(50px);
+    filter: opacity(0) blur(30px);
+  }
+  100% {
+    transform: translate(0);
+    filter: opacity(1) blur(0);
+  }
+}
+
+@keyframes prev {
+  0% {
+    transform: translate(-50px);
+    filter: opacity(0) blur(30px);
+  }
+  100% {
+    transform: translate(0);
+    filter: opacity(1) blur(0);
+  }
+}
