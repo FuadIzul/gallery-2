@@ -5,8 +5,8 @@
 
 body {
   /* height: 650px; */
+  background: linear-gradient(rgb(1, 5, 223) 0%, rgb(61, 189, 10) 70%);
 
-  background: linear-gradient(rgb(243, 26, 26) 0%, rgb(132, 10, 189) 70%);
   background-repeat: no-repeat;
   font: 16px/28px Rubik;
   letter-spacing: 0.4px;
