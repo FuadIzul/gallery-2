@@ -5,7 +5,11 @@
 
 body {
   /* height: 650px; */
+<<<<<<< HEAD
   background: linear-gradient(rgb(243, 26, 26) 0%, rgb(132, 10, 189) 70%);
+=======
+  background: linear-gradient(rgb(223, 1, 156) 0%, rgb(61, 189, 10) 70%);
+>>>>>>> 68d39a0a93f5348b247f562ce136876346ef2358
   background-repeat: no-repeat;
   font: 16px/28px Rubik;
   letter-spacing: 0.4px;
@@ -31,7 +35,7 @@ body {
   position: absolute;
   top: 1.7em;
   right: 2em;
-  background-color: darkcyan;
+  background-color: rgb(233, 236, 236);
   width: 30em;
   padding: 0.2em;
   margin-top: 2px;
